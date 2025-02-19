@@ -26,12 +26,3 @@ migrations:
 
 migrate:
 	python manage.py migrate
-
-collectstatic:
-	python manage.py collectstatic --no-input
-
-translate-compile:
-	django-admin compilemessages
-
-translate-makemessages:
-	django-admin makemessages -l ru
