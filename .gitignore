@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+.github
+.idea
+.vscode
+.coverage
+coverage.xml
+.python-version
+.ruff_cache
+.env
+venv/
