@@ -11,3 +11,4 @@ setuptools==65.5.0
 sqlparse==0.5.3
 typing-extensions==4.12.2
 uvicorn==0.34.0
+gunicorn==21.2.0

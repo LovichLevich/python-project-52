@@ -1,7 +1,8 @@
 PORT ?= 8000
 
 install:
-	uv pip install gunicorn uvicorn -r requirements.txt
+	pip install -r requirements.txt
+
 
 check:
 	uv run ruff check .
