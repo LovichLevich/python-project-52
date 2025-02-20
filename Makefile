@@ -1,6 +1,7 @@
+PORT ?= 10000
+
 install:
 	pip install -r requirements.txt
-
 
 check:
 	uv run ruff check .
