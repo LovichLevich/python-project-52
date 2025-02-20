@@ -1,7 +1,7 @@
+PORT ?= 8000
+
 install:
-	pip install uv
-	pip install gunicorn uvicorn
-	uv pip install -r requirements.txt
+	uv pip install gunicorn uvicorn -r requirements.txt
 
 check:
 	uv run ruff check .
@@ -10,10 +10,10 @@ check-fix:
 	uv run ruff check --fix .
 
 start:
-	python manage.py runserver
+	python manage.py runserver 0.0.0.0:$(PORT)
 
 render-start:
-	gunicorn task_manager.wsgi
+	gunicorn task_manager.wsgi:application --bind 0.0.0.0:$(PORT)
 
 build:
 	./build.sh
@@ -21,11 +21,8 @@ build:
 sync:
 	uv sync
 
-migrations:
-	python manage.py makemigrations
-
 migrate:
-	python manage.py migrate
+	python manage.py makemigrations && python manage.py migrate
 
 collectstatic:
 	python manage.py collectstatic --no-input
