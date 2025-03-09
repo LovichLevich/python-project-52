@@ -1,0 +1,27 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "User List" %}</h2>
+<table class="table table-striped">
+    <tr>
+        <th>{% trans "ID" %}</th>
+        <th>{% trans "Username" %}</th>
+        <th>{% trans "Full name" %}</th>
+        <th>{% trans "Date created" %}</th>
+        <th></th>
+    </tr>
+    {% for user in user_list %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.first_name }} {{ user.last_name }}</td>
+        <td>{{ user.date_joined }}</td>
+        <td>
+            <a href="{% url 'update_user' user.id %}">{% trans "Edit" %}</a>
+            <a href="{% url 'delete_user' user.id %}">{% trans "Delete" %}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
