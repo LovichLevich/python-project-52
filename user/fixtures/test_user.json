@@ -1,0 +1,14 @@
+[
+    {
+        "model": "user.User",
+        "pk": 1,
+        "fields": {
+            "username": "testuser",
+            "password": "pbkdf2_sha256$260000$somehashedvalue",
+            "first_name": "Test",
+            "last_name": "User",
+            "is_active": true,
+            "created_at": "2024-03-14T12:00:00Z"
+        }
+    }
+]
