@@ -3,7 +3,7 @@
         "model": "user.User",
         "pk": 1,
         "fields": {
-            "username": "testuser",
+            "username": "test_fixture_user",
             "password": "pbkdf2_sha256$260000$somehashedvalue",
             "first_name": "Test",
             "last_name": "User",
