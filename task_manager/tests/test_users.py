@@ -8,9 +8,8 @@ class UserViewsTestCase(TestCase):
     fixtures = ["user/fixtures/test_user.json"]
 
     def setUp(self):
-        # Загружаем пользователя из фикстуры
-        self.user = User.objects.get(username="test_fixture_user")  # Убедись, что имя соответствует фикстуре
-
+        self.user = User.objects.get(username="test_fixture_user")
+        
     def test_user_list_view(self):
         response = self.client.get(reverse("user_list"))
         self.assertEqual(response.status_code, 200)
