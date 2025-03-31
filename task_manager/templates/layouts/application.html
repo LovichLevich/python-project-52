@@ -46,6 +46,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'statuses_list' %}">{% trans "Statuses" %}</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'tasks_list' %}">{% trans "Tasks" %}</a>
+            </li>
             {% else %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">{% trans "Entrance" %}</a>

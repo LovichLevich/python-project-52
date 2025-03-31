@@ -3,6 +3,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
+from statuses.models import Status
+from tasks.models import Task
+
 User = get_user_model()
 
 class UserLoginForm(AuthenticationForm):
@@ -39,3 +42,17 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["first_name", "last_name", "username", "password1", "password2"]
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['name', 'description', 'executor', 'status']
+        widgets = {
+            'status': forms.Select(attrs={'class': 'form-select'}),
+            'executor': forms.Select(attrs={'class': 'form-select'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['status'].queryset = Status.objects.all()
+        self.fields['executor'].queryset = User.objects.all()

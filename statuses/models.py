@@ -15,7 +15,7 @@ class Status(models.Model):
     class Meta:
         verbose_name = _("Статус")
         verbose_name_plural = _("Статусы")
-        ordering = ["id"]  # Сортировка по ID, чтобы записи шли в порядке создания
+        ordering = ["id"]
 
     def __str__(self):
         return self.name

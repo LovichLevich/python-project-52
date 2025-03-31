@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'task_manager',
     'user',
     'statuses',
+    'tasks',
 ]
 
 
