@@ -1,0 +1,40 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{% trans "Label" %}</h1>
+
+    <a href="{% url 'label_create' %}" class="btn btn-primary mb-3">
+        {% trans "Create a label" %}
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{% trans "ID" %}</th>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Creation Date" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for label in labels %}
+            <tr>
+                <td>{{ label.id }}</td>
+                <td>{{ label.name }}</td>
+                <td>{{ label.created_at|date:"d.m.Y H:i" }}</td>
+                <td>
+                    <a href="{% url 'label_update' label.id %}" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
+                    <a href="{% url 'label_delete' label.id %}" class="btn btn-sm btn-outline-danger">{% trans "Delete" %}</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">{% trans "No Labels" %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

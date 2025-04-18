@@ -5,16 +5,16 @@ class Status(models.Model):
     name = models.CharField(
         max_length=100,
         unique=True,
-        verbose_name=_("Имя")
+        verbose_name=_("Name")
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        verbose_name=_("Дата создания")
+        verbose_name=_("Creation Date")
     )
 
     class Meta:
-        verbose_name = _("Статус")
-        verbose_name_plural = _("Статусы")
+        verbose_name = _("Status")
+        verbose_name_plural = _("Statuses")
         ordering = ["id"]
 
     def __str__(self):

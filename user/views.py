@@ -4,6 +4,7 @@ from django.contrib.auth import login, get_user_model
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.utils.translation import gettext_lazy as _
 from django.views import View
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
@@ -22,7 +23,7 @@ class EditProfileView(View):
     def get(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, "Вы не можете редактировать этот профиль.")
+            messages.error(request, _("You do not have permission to modify another user"))
             return redirect(reverse_lazy("home"))
         form = UserEditForm(instance=user)
         return render(request, "users/create.html", {"form": form})
@@ -30,14 +31,14 @@ class EditProfileView(View):
     def post(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, "Вы не можете редактировать этот профиль.")
+            messages.error(request, _("You do not have permission to modify another user"))
             return redirect(reverse_lazy("home"))
         form = UserEditForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            messages.success(request, "Профиль успешно обновлён.")
+            messages.success(request, _("Profile successfully updated"))
             return redirect(reverse_lazy("user_list"))
-        messages.error(request, "Ошибка обновления профиля. Проверьте данные.")
+        messages.error(request, _("Profile update error. Check the data"))
         return render(request, "users/create.html", {"form": form})
 
 
@@ -45,18 +46,23 @@ class EditProfileView(View):
 class DeleteUserView(View):
     def get(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
+        context = {
+            "title": _("Remove a user"),
+            "message": _('Are you sure you want to remove') + f' "{user.username}"?',
+            "cancel_url": reverse_lazy("user_list")
+            }
         if request.user != user:
-            messages.error(request, "Вы не можете удалить этот профиль.")
+            messages.error(request, _("You can't delete this profile"))
             return redirect(reverse_lazy("home"))
-        return render(request, "users/delete.html", {"user": user})
+        return render(request, "confirm_delete.html", context)
 
     def post(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, "Вы не можете удалить этот профиль.")
+            messages.error(request, _("You don't have the privileges to change another user"))
             return redirect(reverse_lazy("home"))
         user.delete()
-        messages.success(request, "Пользователь успешно удалён.")
+        messages.success(request, _("User successfully deleted"))
         return redirect(reverse_lazy("home"))
 
 
@@ -66,11 +72,10 @@ class RegisterView(FormView):
     success_url = reverse_lazy("home")
 
     def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        messages.success(self.request, "Вы успешно зарегистрировались.")
+        form.save()
+        messages.success(self.request, _("You have successfully registered"))
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, "Ошибка регистрации. Проверьте введённые данные.")
+        messages.error(self.request, _("Registration error. Check the entered data"))
         return self.render_to_response(self.get_context_data(form=form))

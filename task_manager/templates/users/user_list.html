@@ -18,8 +18,8 @@
         <td>{{ user.first_name }} {{ user.last_name }}</td>
         <td>{{ user.date_joined }}</td>
         <td>
-            <a href="{% url 'update_user' user.id %}">{% trans "Edit" %}</a>
-            <a href="{% url 'delete_user' user.id %}">{% trans "Delete" %}</a>
+            <a href="{% url 'update_user' user.id %}" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
+            <a href="{% url 'delete_user' user.id %}" class="btn btn-sm btn-outline-danger">{% trans "Delete" %}</a>
         </td>
     </tr>
     {% endfor %}

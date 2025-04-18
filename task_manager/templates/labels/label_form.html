@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">
-        {% if object %}{% trans 'Edit Status' %}{% else %}{% trans 'Create Status' %}{% endif %}
+        {% if object %}{% trans 'Edit Label' %}{% else %}{% trans 'Create a label' %}{% endif %}
     </h1>
 
     <form method="post">
@@ -13,7 +13,7 @@
             <label class="form-label" for="{{ form.name.id_for_label }}">{% trans 'Name' %}</label>
             {{ form.name }}
         </div>
-
+    
         <input class="btn btn-primary" type="submit" value="{% if object %}{% trans 'Save' %}{% else %}{% trans 'Create' %}{% endif %}">
     </form>
 </div>
