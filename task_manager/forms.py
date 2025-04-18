@@ -3,10 +3,12 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
+from labels.models import Labels
 from statuses.models import Status
 from tasks.models import Task
-from labels.models import Labels
+
 User = get_user_model()
+
 
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(
@@ -43,6 +45,7 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ["first_name", "last_name", "username", "password1", "password2"]
 
+
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
@@ -59,11 +62,12 @@ class TaskForm(forms.ModelForm):
         self.fields['executor'].queryset = User.objects.all()
         self.fields['labels'].queryset = Labels.objects.all()
 
+
 class StatusForm(forms.ModelForm):
     class Meta:
         model = Status
         fields = ['name']
-        labels = {'name': _('Name'),}
+        labels = {'name': _('Name'), }
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -71,11 +75,12 @@ class StatusForm(forms.ModelForm):
             }),
         }
         
+
 class LabelForm(forms.ModelForm):
     class Meta:
         model = Labels
         fields = ['name']
-        labels = {'name': _('Name'),}
+        labels = {'name': _('Name'), }
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',

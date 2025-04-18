@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import  DeleteUserView, EditProfileView, RegisterView, UserListView
+
+from .views import DeleteUserView, EditProfileView, RegisterView, UserListView
 
 urlpatterns = [
     path("", UserListView.as_view(), name="user_list"),

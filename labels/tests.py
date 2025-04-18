@@ -1,12 +1,14 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth import get_user_model
 
 from statuses.models import Status
-from .models import Labels
 from task_manager.forms import LabelForm
 
+from .models import Labels
+
 User = get_user_model()
+
 
 class LabelTests(TestCase):
     

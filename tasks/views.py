@@ -1,15 +1,22 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
+
 from labels.models import Labels
+from statuses.models import Status
 from task_manager.mixins import DeleteViewContextMixin
 from tasks.models import Task
-from django.shortcuts import render
 from user.models import User
-from statuses.models import Status
-from django.contrib import messages
-from django.shortcuts import redirect
+
 
 class TasksView(LoginRequiredMixin, ListView):
     model = Task

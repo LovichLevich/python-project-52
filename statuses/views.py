@@ -1,13 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.utils.translation import gettext_lazy as _
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.db.models import ProtectedError
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from task_manager.forms import StatusForm
 from task_manager.mixins import DeleteViewContextMixin
+
 from .models import Status
 
 
@@ -15,6 +16,7 @@ class StatusesListView(LoginRequiredMixin, ListView):
     model = Status
     template_name = "statuses/statuses_list.html"
     context_object_name = "statuses_list"
+
 
 class StatusCreateView(LoginRequiredMixin, CreateView):
     model = Status
@@ -25,6 +27,7 @@ class StatusCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         messages.success(self.request, _("Status is successfully created"))
         return super().form_valid(form)
+
 
 class StatusUpdateView(LoginRequiredMixin, UpdateView):
     model = Status

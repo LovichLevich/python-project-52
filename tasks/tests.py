@@ -1,11 +1,13 @@
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth.models import User
-from tasks.models import Task
+
 from statuses.models import Status
-from django.contrib.auth import get_user_model
+from tasks.models import Task
 
 User = get_user_model()
+
 
 class TaskTests(TestCase):
 

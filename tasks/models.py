@@ -1,9 +1,10 @@
-from django.utils.translation import gettext as _
 from django.db import models
+from django.utils.translation import gettext as _
 
-from user.models import User
-from statuses.models import Status
 from labels.models import Labels
+from statuses.models import Status
+from user.models import User
+
 
 class Task(models.Model):
     name = models.CharField(

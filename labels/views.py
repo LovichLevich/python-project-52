@@ -1,12 +1,14 @@
-from django.views import View
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.utils.translation import gettext_lazy as _
-from .models import Labels
+from django.views import View
+
 from task_manager.forms import LabelForm
+
+from .models import Labels
 
 
 @method_decorator(login_required, name="dispatch")

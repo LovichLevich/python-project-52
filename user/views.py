@@ -1,16 +1,18 @@
-from django.views.generic import ListView
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import login, get_user_model
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.utils.translation import gettext_lazy as _
 from django.views import View
-from django.urls import reverse_lazy
+from django.views.generic import ListView
 from django.views.generic.edit import FormView
+
 from task_manager.forms import CustomUserCreationForm, UserEditForm
 
 User = get_user_model()
+
 
 class UserListView(ListView):
     model = User
