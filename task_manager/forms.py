@@ -7,7 +7,6 @@ from task_manager.apps.labels.models import Labels
 from task_manager.apps.statuses.models import Status
 from task_manager.apps.tasks.models import Task
 
-
 User = get_user_model()
 
 

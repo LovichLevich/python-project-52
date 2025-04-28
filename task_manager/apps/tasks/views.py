@@ -10,12 +10,12 @@ from django.views.generic import (
     ListView,
     UpdateView,
 )
+
 from task_manager.apps.labels.models import Labels
 from task_manager.apps.statuses.models import Status
-from task_manager.apps.user.models import User
-
-from task_manager.mixins import DeleteViewContextMixin
 from task_manager.apps.tasks.models import Task
+from task_manager.apps.user.models import User
+from task_manager.mixins import DeleteViewContextMixin
 
 
 class TasksView(LoginRequiredMixin, ListView):

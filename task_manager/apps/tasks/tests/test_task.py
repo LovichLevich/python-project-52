@@ -1,4 +1,5 @@
 from django.urls import reverse
+
 from task_manager.apps.tasks.models import Task
 from task_manager.apps.tasks.tests.fixtures.task_test import TaskTestFixture
 

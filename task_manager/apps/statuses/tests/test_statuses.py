@@ -1,7 +1,9 @@
 from django.urls import reverse
 
 from task_manager.apps.statuses.models import Status
-from task_manager.apps.statuses.tests.fixtures.status_test import StatusFixtureMixin
+from task_manager.apps.statuses.tests.fixtures.status_test import (
+    StatusFixtureMixin,
+)
 
 
 class StatusCRUDTests(StatusFixtureMixin):

@@ -6,7 +6,6 @@ from task_manager.apps.tasks.models import Task
 from task_manager.forms import LabelForm
 
 
-
 class LabelTests(LabelFixtureMixin):
 
     def test_label_list_view(self):
