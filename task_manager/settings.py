@@ -37,6 +37,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'task_manager',
+    'task_manager.apps.user',
+    'task_manager.apps.statuses',
+    'task_manager.apps.tasks',
+    'task_manager.apps.labels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,11 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap5',
     'widget_tweaks',
-    'task_manager',
-    'user',
-    'statuses',
-    'tasks',
-    'labels',
 ]
 
 ROLLBAR = {
@@ -172,3 +172,10 @@ LOGOUT_REDIRECT_URL = 'home'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+FIXTURE_DIRS = [
+    BASE_DIR / 'apps' / 'user' / 'tests' / 'fixtures' / 'user_test.json',
+    BASE_DIR / 'apps' / 'tasks' / 'tests' / 'fixtures' / 'task_test.json',
+    BASE_DIR / 'apps' / 'statuses' / 'tests' / 'fixtures' / 'status_test.json',
+    BASE_DIR / 'apps' / 'labels' / 'tests' / 'fixtures' / 'label_test.json'
+]

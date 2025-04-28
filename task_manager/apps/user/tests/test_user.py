@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class UserViewsTestCase(TestCase):
-    fixtures = ["user/fixtures/test_user.json"]
+    fixtures = ["task_manager/apps/user/tests/fixtures/user_test.json"]
 
     def setUp(self):
         self.user = User.objects.get(username="test_fixture_user")

@@ -22,10 +22,10 @@ from .views import CustomLoginView, CustomLogoutView, HomePageView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
-    path('users/', include('user.urls')),
-    path('statuses/', include('statuses.urls')),
-    path('tasks/', include('tasks.urls')),
-    path('labels/', include('labels.urls')),
+    path('users/', include('task_manager.apps.user.urls')),
+    path('statuses/', include('task_manager.apps.statuses.urls')),
+    path('tasks/', include('task_manager.apps.tasks.urls')),
+    path('labels/', include('task_manager.apps.labels.urls')),
     path('login/', CustomLoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]

@@ -3,9 +3,10 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
-from labels.models import Labels
-from statuses.models import Status
-from tasks.models import Task
+from task_manager.apps.labels.models import Labels
+from task_manager.apps.statuses.models import Status
+from task_manager.apps.tasks.models import Task
+
 
 User = get_user_model()
 

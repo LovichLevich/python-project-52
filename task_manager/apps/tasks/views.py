@@ -10,12 +10,12 @@ from django.views.generic import (
     ListView,
     UpdateView,
 )
+from task_manager.apps.labels.models import Labels
+from task_manager.apps.statuses.models import Status
+from task_manager.apps.user.models import User
 
-from labels.models import Labels
-from statuses.models import Status
 from task_manager.mixins import DeleteViewContextMixin
-from tasks.models import Task
-from user.models import User
+from task_manager.apps.tasks.models import Task
 
 
 class TasksView(LoginRequiredMixin, ListView):
@@ -91,8 +91,9 @@ class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteViewContextM
 
     def handle_no_permission(self):
         messages.error(self.request, _('The task can be deleted only by its author'))
-        return redirect('tasks_list')
+        return redirect(self.success_url)
 
-    def delete(self, request, *args, **kwargs):
+    def form_valid(self, form):
+        response = super().form_valid(form)
         messages.success(self.request, _('Task is successfully deleted'))
-        return super().delete(request, *args, **kwargs)
+        return response

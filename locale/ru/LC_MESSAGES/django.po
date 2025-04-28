@@ -89,10 +89,8 @@ msgid "Status is successfully changed"
 msgstr "Статус успешно изменён"
 
 #: statuses/views.py:44
-#, fuzzy
-#| msgid "Remove a label"
 msgid "Remove a status"
-msgstr "Удалить метку"
+msgstr "Удалить статус"
 
 #: statuses/views.py:49
 msgid "Status is successfully deleted"
@@ -100,7 +98,7 @@ msgstr "Статус успешно удалён"
 
 #: statuses/views.py:52
 msgid "Can't delete status because it's in use"
-msgstr "Невозможно удалить метку, потому что она используется"
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: task_manager/forms.py:13 task_manager/forms.py:16
 #: task_manager/templates/registration/login.html:14
@@ -119,8 +117,6 @@ msgid "Password"
 msgstr "Пароль"
 
 #: task_manager/mixins.py:6
-#, fuzzy
-#| msgid "Remove a label"
 msgid "Remove an object"
 msgstr "Удалить метку"
 
@@ -347,29 +343,24 @@ msgid "You are logged out"
 msgstr "Вы разлогинены"
 
 #: tasks/views.py:59
-#| msgid "Status is successfully created"
 msgid "Task is successfully created"
-msgstr "Статус успешно создан"
+msgstr "Задача успешно создана"
 
 #: tasks/views.py:70
 msgid "Task is successfully changed"
 msgstr "Задача успешно изменена"
 
 #: tasks/views.py:78
-#, fuzzy
-#| msgid "Remove a label"
 msgid "Remove a task"
-msgstr "Удалить метку"
+msgstr "Удалить задачу"
 
 #: tasks/views.py:86
 msgid "The task can be deleted only by its author"
 msgstr "Удалить задачу может только её автор"
 
 #: tasks/views.py:90
-#, fuzzy
-#| msgid "Status is successfully deleted"
 msgid "Task is successfully deleted"
-msgstr "Статус успешно удалён"
+msgstr "Задача успешно удалёна"
 
 #: user/views.py:26 user/views.py:34
 msgid "You do not have permission to modify another user"
@@ -384,36 +375,28 @@ msgid "Profile update error. Check the data"
 msgstr "Ошибка обновления профиля. Проверьте данные"
 
 #: user/views.py:50
-#, fuzzy
-#| msgid "Remove a label"
 msgid "Remove a user"
-msgstr "Удалить метку"
+msgstr "Удалить пользовотеля"
 
 #: user/views.py:55
 msgid "You can't delete this profile"
 msgstr "Вы не можете удалить этот профиль"
 
 #: user/views.py:62
-#, fuzzy
-#| msgid "You do not have permission to modify another user"
 msgid "You don't have the privileges to change another user"
 msgstr "У вас нет прав для изменения другого пользователя"
 
 #: user/views.py:65
-#, fuzzy
-#| msgid "Label is successfully deleted"
 msgid "User successfully deleted"
-msgstr "Метка успешно удалена"
+msgstr "Пользователь успешно удален"
 
 #: user/views.py:76
-#| msgid "Status is successfully created"
 msgid "You have successfully registered"
-msgstr "Статус успешно создан"
+msgstr "Пользователь успешно создан"
 
 #: user/views.py:80
-#| msgid "Profile update error. Check the data"
 msgid "Registration error. Check the entered data"
-msgstr "Ошибка обновления профиля. Проверьте данные"
+msgstr "Ошибка регистрации. Проверьте данные"
 
 #~ msgid "Cancel"
 #~ msgstr "Отмена"

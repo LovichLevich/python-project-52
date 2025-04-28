@@ -1,9 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext as _
-
-from labels.models import Labels
-from statuses.models import Status
-from user.models import User
+from task_manager.apps.statuses.models import Status
+from task_manager.apps.user.models import User
+from task_manager.apps.labels.models import Labels
 
 
 class Task(models.Model):
@@ -24,7 +23,7 @@ class Task(models.Model):
     )
     status = models.ForeignKey(
         Status, related_name='status', verbose_name=_('Status'),
-        blank=False, on_delete=models.PROTECT,
+        blank=False, null=False, on_delete=models.PROTECT,
     )
     labels = models.ManyToManyField(
         Labels, blank=True, related_name='tasks', verbose_name=_('Labels'),
