@@ -12,3 +12,11 @@ sqlparse==0.5.3
 typing-extensions==4.12.2
 uvicorn==0.34.0
 gunicorn==21.2.0
+django-bootstrap5==24.3
+iniconfig==2.1.0
+pip==23.0.1
+pluggy==1.5.0
+psycopg==3.2.4
+pytest==8.3.5
+pytest-django==4.11.1
+setuptools==65.5.0
