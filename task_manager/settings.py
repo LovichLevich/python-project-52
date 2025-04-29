@@ -31,17 +31,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'webserver']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'task_manager',
-    'task_manager.apps.user',
-    'task_manager.apps.statuses',
-    'task_manager.apps.tasks',
-    'task_manager.apps.labels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap5',
     'widget_tweaks',
+    'task_manager',
+    'task_manager.apps.user',
+    'task_manager.apps.statuses',
+    'task_manager.apps.tasks',
+    'task_manager.apps.labels',
 ]
 
 ROLLBAR = {
