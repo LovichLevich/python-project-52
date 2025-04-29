@@ -172,10 +172,3 @@ LOGOUT_REDIRECT_URL = 'home'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
-FIXTURE_DIRS = [
-    BASE_DIR / 'apps' / 'user' / 'tests' / 'fixtures' / 'user_test.json',
-    BASE_DIR / 'apps' / 'tasks' / 'tests' / 'fixtures' / 'task_test.json',
-    BASE_DIR / 'apps' / 'statuses' / 'tests' / 'fixtures' / 'status_test.json',
-    BASE_DIR / 'apps' / 'labels' / 'tests' / 'fixtures' / 'label_test.json'
-]
