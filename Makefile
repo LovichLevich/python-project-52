@@ -1,4 +1,4 @@
-PORT ?= 10000
+PORT ?= 3000
 
 install:
 	pip install -r requirements.txt
