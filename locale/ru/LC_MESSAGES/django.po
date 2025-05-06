@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-06 13:58+0300\n"
+"POT-Creation-Date: 2025-05-06 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -351,7 +351,6 @@ msgid "Change"
 msgstr "Изменить"
 
 #: task_manager/templates/users/create.html:7
-#: task_manager/templates/users/create.html:50
 msgid "Register"
 msgstr "Регистрация"
 
@@ -375,11 +374,15 @@ msgstr "Ваш пароль должен содержать не менее 3 с
 #: task_manager/templates/users/create.html:42
 #: task_manager/templates/users/create.html:43
 msgid "Confirm password"
-msgstr "Подтвердите пароль"
+msgstr "Подтверждение пароля"
 
 #: task_manager/templates/users/create.html:45
 msgid "To confirm, please enter your password again."
-msgstr "Для подтверждения введите пароль ещё раз."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
+
+#: task_manager/templates/users/create.html:50
+msgid "Sign up"
+msgstr "Зарегистрироваться"
 
 #: task_manager/templates/users/user_list.html:5
 msgid "User List"
