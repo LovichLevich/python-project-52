@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-06 14:49+0300\n"
+"POT-Creation-Date: 2025-05-06 15:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,9 +346,8 @@ msgid "No tasks found"
 msgstr "Задачи не найдены"
 
 #: task_manager/templates/users/create.html:7
-#: task_manager/templates/users/create.html:50
-msgid "Change"
-msgstr "Изменить"
+msgid "Change user"
+msgstr "Изменение пользователя"
 
 #: task_manager/templates/users/create.html:7
 msgid "Register"
@@ -379,6 +378,10 @@ msgstr "Подтверждение пароля"
 #: task_manager/templates/users/create.html:45
 msgid "To confirm, please enter your password again."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
+
+#: task_manager/templates/users/create.html:50
+msgid "Change"
+msgstr "Изменить"
 
 #: task_manager/templates/users/create.html:50
 msgid "Sign up"

@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">
-      {% if request.user.is_authenticated %}{% trans 'Change' %}{% else %}{% trans 'Register' %}{% endif %}
+      {% if request.user.is_authenticated %}{% trans 'Change user' %}{% else %}{% trans 'Register' %}{% endif %}
     </h1>
   
     <form method="post">
