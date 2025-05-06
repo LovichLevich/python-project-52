@@ -16,9 +16,9 @@ class UserViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "users/user_list.html")
 
-    def test_register_view(self):
+    def test_create_view(self):
         response = self.client.post(
-            reverse("register"),
+            reverse("create"),
             {
                 "username": "newuser",
                 "first_name": "New",

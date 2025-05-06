@@ -68,7 +68,7 @@ class DeleteUserView(View):
         return redirect(reverse_lazy("home"))
 
 
-class RegisterView(FormView):
+class CreateView(FormView):
     template_name = "users/create.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("home")
