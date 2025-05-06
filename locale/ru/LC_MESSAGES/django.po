@@ -175,7 +175,7 @@ msgstr "Пользователь успешно удален"
 
 #: task_manager/apps/user/views.py:78
 msgid "You have successfully registered"
-msgstr "Пользователь успешно создан"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/apps/user/views.py:82
 msgid "Registration error. Check the entered data"
