@@ -71,7 +71,7 @@ class DeleteUserView(View):
 class CreateView(FormView):
     template_name = "users/create.html"
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("login")
 
     def form_valid(self, form):
         form.save()
