@@ -382,7 +382,7 @@ msgstr "Для подтверждения введите, пожалуйста, 
 
 #: task_manager/templates/users/create.html:50
 msgid "Sign up"
-msgstr "Зарегистрироваться"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/users/user_list.html:5
 msgid "User List"
