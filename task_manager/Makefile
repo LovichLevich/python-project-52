@@ -35,3 +35,4 @@ translate-makemessages:
 
 tests:
 	python manage.py test
+
