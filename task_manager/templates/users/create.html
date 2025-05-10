@@ -30,7 +30,7 @@
     
       <div class="mb-3">
         <label class="form-label" for="id_password1">{% trans "Password" %}</label>
-        <input type="password" name="password1" autocomplete="new-password" class="form-control" placeholder="{% trans "Password" %}" aria-describedby="id_password1_helptext" id="id_password1">
+        <input type="password" name="password1" autocomplete="new-password" class="form-control" placeholder="{% trans "Password" %} "required aria-describedby="id_password1_helptext" id="id_password1">
         <div class="form-text">
           <ul>
             <li>{% trans "Your password must be at least 3 characters long." %}</li>
@@ -40,7 +40,7 @@
     
       <div class="mb-3">
         <label class="form-label" for="id_password2">{% trans "Confirm password" %}</label>
-        <input type="password" name="password2" autocomplete="new-password" class="form-control" placeholder="{% trans "Confirm password" %}" aria-describedby="id_password2_helptext" id="id_password2">
+        <input type="password" name="password2" autocomplete="new-password" class="form-control" placeholder="{% trans "Confirm password" %}" required aria-describedby="id_password2_helptext" id="id_password2">
         <div class="form-text">
           {% trans "To confirm, please enter your password again." %}
         </div>
