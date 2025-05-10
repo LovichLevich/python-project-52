@@ -65,7 +65,7 @@ class DeleteUserView(View):
             return redirect(reverse_lazy("home"))
         user.delete()
         messages.success(request, _("User successfully deleted"))
-        return redirect(reverse_lazy("home"))
+        return redirect(reverse_lazy("user_list"))
 
 
 class CreateView(FormView):
