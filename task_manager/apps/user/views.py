@@ -21,7 +21,7 @@ class UserListView(ListView):
 
 
 @method_decorator(login_required, name="dispatch")
-class EditProfileView(View):
+class UpdateProfileView(View):
     def get(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
