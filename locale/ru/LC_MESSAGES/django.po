@@ -151,7 +151,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/apps/user/views.py:41
 msgid "Profile successfully updated"
-msgstr "Профиль успешно обновлён"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/apps/user/views.py:43
 msgid "Profile update error. Check the data"
