@@ -44,7 +44,7 @@ msgstr "Автор"
 
 #: task_manager/apps/labels/views.py:33
 msgid "The label was created successfully."
-msgstr "Метка была создан успешно."
+msgstr "Метка успешно создана"
 
 #: task_manager/apps/labels/views.py:50
 msgid "Label is successfully changed"
