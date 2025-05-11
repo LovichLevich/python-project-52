@@ -92,7 +92,7 @@ msgstr "Статус успешно создан"
 
 #: task_manager/apps/statuses/views.py:39
 msgid "Status is successfully changed"
-msgstr "Статус успешно изменён"
+msgstr "Статус успешно изменен"
 
 #: task_manager/apps/statuses/views.py:47
 msgid "Remove a status"
