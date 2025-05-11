@@ -229,11 +229,6 @@ msgstr "Создать метку"
 
 #: task_manager/templates/labels/label_form.html:17
 #: task_manager/templates/statuses/status_form.html:17
-msgid "Save"
-msgstr "Сохранить"
-
-#: task_manager/templates/labels/label_form.html:17
-#: task_manager/templates/statuses/status_form.html:17
 #: task_manager/templates/tasks/task_form.html:47
 msgid "Create"
 msgstr "Создать"
@@ -248,6 +243,8 @@ msgstr "Метка"
 msgid "ID"
 msgstr "ID"
 
+#: task_manager/templates/labels/label_form.html:17
+#: task_manager/templates/statuses/status_form.html:17
 #: task_manager/templates/labels/label_list.html:28
 #: task_manager/templates/statuses/statuses_list.html:28
 #: task_manager/templates/tasks/task_list.html:79
