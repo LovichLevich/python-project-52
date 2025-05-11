@@ -4,7 +4,8 @@
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">
-      {% if request.user.is_authenticated %}{% trans 'Change user' %}{% else %}{% trans 'Register' %}{% endif %}
+      {% if is_create %}{% trans 'Register' %}{% else %}{% trans 'Change user' %}{% endif %}
+
     </h1>
   
     <form method="post">
@@ -47,7 +48,8 @@
       </div>
     
       <input class="btn btn-primary" type="submit"
-       value="{% if request.user.is_authenticated %}{% trans 'Change' %}{% else %}{% trans 'Sign up' %}{% endif %}">
-    </form>    
+       value="{% if is_create %}{% trans 'Sign up' %}{% else %}{% trans 'Change' %}{% endif %}">
+    </form>   
+ 
   </div>
 {% endblock %}

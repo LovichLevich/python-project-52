@@ -28,7 +28,7 @@ class UpdateProfileView(View):
             messages.error(request, _("You do not have permission to modify another user"))
             return redirect(reverse_lazy("home"))
         form = UserEditForm(instance=user)
-        return render(request, "users/create.html", {"form": form})
+        return render(request, "users/create.html", {"form": form, "is_create": False})
 
     def post(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
@@ -41,7 +41,7 @@ class UpdateProfileView(View):
             messages.success(request, _("Profile successfully updated"))
             return redirect(reverse_lazy("user_list"))
         messages.error(request, _("Profile update error. Check the data"))
-        return render(request, "users/create.html", {"form": form})
+        return render(request, "users/create.html", {"form": form, "is_create": False})
 
 
 @method_decorator(login_required, name="dispatch")
@@ -72,6 +72,11 @@ class CreateView(FormView):
     template_name = "users/create.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("login")
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_create'] = True
+        return context
 
     def form_valid(self, form):
         form.save()
