@@ -55,7 +55,7 @@ class DeleteUserView(View):
             }
         if request.user != user:
             messages.error(request, _("You can't delete this profile"))
-            return redirect(reverse_lazy("home"))
+            return redirect(reverse_lazy("user_list"))
         return render(request, "confirm_delete.html", context)
 
     def post(self, request, pk: int):
