@@ -80,8 +80,8 @@
             <a href="{% url 'task' task.id %}">{{ task.name }}</a>
           </td>
           <td>{{ task.status.name }}</td>
-          <td>{{ user.first_name }} {{ user.last_name }}</td>
-          <td>{{ task.executor.username}}</td>
+          <td>{{ user.get_full_name}}</td>
+          <td>{{ task.executor.get_full_name }}</td>
           <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
           <td>
             <a href="{% url 'task_update' task.id %}" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
