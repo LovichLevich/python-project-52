@@ -8,6 +8,9 @@ User = get_user_model()
 
 class StatusFixtureMixin(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username="testuser", password="testpass")
+        self.user = User.objects.create_user(
+            username="testuser",
+            password="testpass",
+        )
         self.client.force_login(self.user)
         self.status = Status.objects.create(name="Test Status")

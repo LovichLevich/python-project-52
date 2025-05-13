@@ -58,7 +58,9 @@ class LabelDeleteView(View):
         label = get_object_or_404(Labels, pk=pk)
         context = {
             "title": _("Remove a label"),
-            "message": _('Are you sure you want to remove') + f' "{label.name}"?',
+            "message": (
+                _('Are you sure you want to remove') + f' "{label.name}"?'
+            ),
             "cancel_url": reverse_lazy("label_list")
         }
         return render(request, "confirm_delete.html", context)

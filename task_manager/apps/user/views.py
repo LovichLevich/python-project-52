@@ -25,15 +25,27 @@ class UpdateProfileView(View):
     def get(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, _("You do not have permission to modify another user"))
+            error_message = _(
+                "You do not have permission "
+                "to modify another user"
+                )
+            messages.error(request, error_message)
             return redirect(reverse_lazy("home"))
         form = UserEditForm(instance=user)
-        return render(request, "users/create.html", {"form": form, "is_create": False})
+        context = {
+            "form": form,
+            "is_create": False
+        }
+        return render(request, "users/create.html", context)
 
     def post(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, _("You do not have permission to modify another user"))
+            error_message = _(
+                "You do not have "
+                "permission to modify another user"
+            )
+            messages.error(request, error_message)
             return redirect(reverse_lazy("home"))
         form = UserEditForm(request.POST, instance=user)
         if form.is_valid():
@@ -41,27 +53,40 @@ class UpdateProfileView(View):
             messages.success(request, _("Profile successfully updated"))
             return redirect(reverse_lazy("user_list"))
         messages.error(request, _("Profile update error. Check the data"))
-        return render(request, "users/create.html", {"form": form, "is_create": False})
+        context = {
+            "form": form,
+            "is_create": False
+        }
+        return render(request, "users/create.html", context)
 
 
 @method_decorator(login_required, name="dispatch")
 class DeleteUserView(View):
     def get(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
+        message = _('Are you sure you want to remove') + f' "{user.username}"?'
         context = {
             "title": _("Remove a user"),
-            "message": _('Are you sure you want to remove') + f' "{user.username}"?',
+            "message": message,
             "cancel_url": reverse_lazy("user_list")
-            }
+        }
         if request.user != user:
-            messages.error(request, _("You don't have the privileges to change another user"))
+            error_message = _(
+                "You don't have the privileges to "
+                "change another user"
+                )
+            messages.error(request, error_message)
             return redirect(reverse_lazy("user_list"))
         return render(request, "confirm_delete.html", context)
 
     def post(self, request, pk: int):
         user = get_object_or_404(User, pk=pk)
         if request.user != user:
-            messages.error(request, _("You don't have the privileges to change another user"))
+            error_message = _(
+                "You don't have the privileges to "
+                "change another user"
+            )
+            messages.error(request, error_message)
             return redirect(reverse_lazy("home"))
         user.delete()
         messages.success(request, _("User successfully deleted"))
@@ -80,9 +105,11 @@ class CreateView(FormView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, _("You have successfully registered"))
+        success_message = _("You have successfully registered")
+        messages.success(self.request, success_message)
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, _("Registration error. Check the entered data"))
+        message = _("Registration error. Check the entered data")
+        messages.error(self.request, message)
         return self.render_to_response(self.get_context_data(form=form))

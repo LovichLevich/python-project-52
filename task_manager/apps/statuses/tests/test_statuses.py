@@ -26,10 +26,12 @@ class StatusCRUDTests(StatusFixtureMixin):
         self.assertEqual(self.status.name, "Updated Status")
 
     def test_status_delete_view(self):
-        response = self.client.post(reverse("delete_status", args=[self.status.id]))
+        url = reverse("delete_status", kwargs={"pk": self.label.pk})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Status.objects.filter(id=self.status.id).exists())
 
     def test_status_delete_protected(self):
-        response = self.client.post(reverse("delete_status", args=[self.status.id]))
+        url = reverse("delete_status", kwargs={"pk": self.label.pk})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 302)

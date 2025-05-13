@@ -28,7 +28,8 @@ class LabelTests(LabelFixtureMixin):
         self.assertTrue(Labels.objects.filter(name="New Label").exists())
 
     def test_label_update_view_get(self):
-        response = self.client.get(reverse("label_update", kwargs={"pk": self.label.pk}))
+        url = reverse("label_update", kwargs={"pk": self.label.pk})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "labels/label_form.html")
         self.assertContains(response, self.label.name)
@@ -44,13 +45,15 @@ class LabelTests(LabelFixtureMixin):
         self.assertEqual(self.label.name, "Updated Label")
 
     def test_label_delete_view_get(self):
-        response = self.client.get(reverse("label_delete", kwargs={"pk": self.label.pk}))
+        url = reverse("label_update", kwargs={"pk": self.label.pk})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "confirm_delete.html")
         self.assertContains(response, self.label.name)
 
     def test_label_delete_view_post(self):
-        response = self.client.post(reverse("label_delete", kwargs={"pk": self.label.pk}))
+        url = reverse("label_update", kwargs={"pk": self.label.pk})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("label_list"))
         self.assertFalse(Labels.objects.filter(pk=self.label.pk).exists())

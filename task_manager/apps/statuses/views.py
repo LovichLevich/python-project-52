@@ -53,5 +53,8 @@ class StatusDeleteView(LoginRequiredMixin, DeleteViewContextMixin, DeleteView):
             messages.success(self.request, _("Status is successfully deleted"))
             return response
         except ProtectedError:
-            messages.error(self.request, _("Can't delete status because it's in use"))
+            messages.error(
+                self.request,
+                _("Can't delete status because it's in use")
+            )
             return redirect(self.success_url)

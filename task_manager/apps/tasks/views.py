@@ -88,7 +88,12 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteViewContextMixin, DeleteView):
+class TaskDeleteView(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    DeleteViewContextMixin,
+    DeleteView,
+):
     model = Task
     template_name = 'confirm_delete.html'
     success_url = reverse_lazy('tasks_list')
@@ -100,7 +105,11 @@ class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteViewContextM
         return self.request.user == task.author
 
     def handle_no_permission(self):
-        messages.error(self.request, _('The task can be deleted only by its author'))
+        messages.error(self.request, _(
+                                       "The task can be "
+                                       "deleted only by its author"
+                                       )
+                       )
         return redirect(self.success_url)
 
     def form_valid(self, form):

@@ -31,8 +31,16 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserEditForm(forms.ModelForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput, required=True)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput, required=True)
+    password1_field = forms.CharField(
+        label='Password',
+        widget=forms.PasswordInput,
+        required=True
+    )
+    password2_field = forms.CharField(
+        label='Password confirmation',
+        widget=forms.PasswordInput,
+        required=True
+    )
 
     class Meta:
         model = User
@@ -58,7 +66,13 @@ class UserEditForm(forms.ModelForm):
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "username", "password1", "password2"]
+        fields = [
+            "first_name", 
+            "last_name", 
+            "username", 
+            "password1", 
+            "password2"
+        ]
 
 
 class TaskForm(forms.ModelForm):
@@ -75,7 +89,9 @@ class TaskForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['status'].queryset = Status.objects.all()
         self.fields['executor'].queryset = User.objects.all()
-        self.fields['executor'].label_from_instance = lambda obj: obj.get_full_name()
+        self.fields['executor'].label_from_instance = (
+            lambda obj: obj.get_full_name()
+        )
         self.fields['labels'].queryset = Labels.objects.all()
 
 

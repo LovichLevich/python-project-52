@@ -24,12 +24,14 @@ class TaskTests(TaskTestFixture):
         self.assertTrue(Task.objects.filter(name='New Task').exists())
 
     def test_task_update_view(self):
-        response = self.client.post(reverse('task_update', args=[self.task.id]), {
+        url = reverse('task_update', args=[self.task.id])
+        data = {
             'name': 'Updated Task',
             'description': 'Updated Description',
             'executor': self.user.id,
             'status': self.status.id,
-        })
+        }
+        response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('tasks_list'))
         self.task.refresh_from_db()
