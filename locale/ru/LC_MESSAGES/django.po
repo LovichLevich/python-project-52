@@ -354,7 +354,7 @@ msgstr "Создать задачу"
 
 #: task_manager/templates/tasks/task_list.html:53
 msgid "Only my tasks"
-msgstr "Только мои задачи"
+msgstr "Только свои задачи"
 
 #: task_manager/templates/tasks/task_list.html:57
 msgid "Show"
