@@ -72,7 +72,9 @@
     <tbody>
       {% for task in tasks %}
         <tr>
-          <td>{{ task.name }}</td>
+          <td>
+            <a href="{% url 'task' task.id %}">{{ task.name }}</a>
+          </td>
           <td>{{ task.status.name }}</td>
           <td>{{ task.executor.username|default:"—" }}</td>
           <td>
