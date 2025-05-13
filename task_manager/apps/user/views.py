@@ -54,7 +54,7 @@ class DeleteUserView(View):
             "cancel_url": reverse_lazy("user_list")
             }
         if request.user != user:
-            messages.error(request, _("You can't delete this profile"))
+            messages.error(request, _("You don't have the privileges to change another user"))
             return redirect(reverse_lazy("user_list"))
         return render(request, "confirm_delete.html", context)
 

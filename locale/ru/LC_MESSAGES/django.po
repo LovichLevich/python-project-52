@@ -178,9 +178,6 @@ msgid "Remove a user"
 msgstr "Удалить пользовотеля"
 
 #: task_manager/apps/user/views.py:57
-msgid "You can't delete this profile"
-msgstr "Вы не можете удалить этот профиль"
-
 #: task_manager/apps/user/views.py:64
 msgid "You don't have the privileges to change another user"
 msgstr "У вас нет прав для изменения другого пользователя"
