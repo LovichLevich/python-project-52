@@ -66,6 +66,11 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
     fields = ['name', 'description', 'executor', 'status', 'labels']
     success_url = reverse_lazy('tasks_list')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_create'] = True
+        return context
+    
     def form_valid(self, form):
         form.instance.author = self.request.user
         messages.success(self.request, _('Task is successfully created'))

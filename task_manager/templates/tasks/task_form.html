@@ -4,7 +4,9 @@
 
 {% block content %}
 <div class="container wrapper flex-grow-1">
-  <h1 class="my-4">{% trans 'Create a task' %}</h1>
+  <h1 class="my-4">
+    {% if is_create %}{% trans 'Create a task' %}{% else %}{% trans 'Change a task' %}{% endif %}
+  </h1>
 
   <form method="post">
     {% csrf_token %}
@@ -44,7 +46,9 @@
       {{ form.labels|add_class:"form-select" }}
     </div>
 
-    <button type="submit" class="btn btn-primary">{% trans 'Create' %}</button>
+    <button type="submit" class="btn btn-primary">
+      {% if is_create %}{% trans 'Create' %}{% else %}{% trans 'Change' %}{% endif %}
+    </button>
   </form>
 </div>
 {% endblock %}
