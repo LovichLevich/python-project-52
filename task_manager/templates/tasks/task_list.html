@@ -63,20 +63,26 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>{% trans "ID" %}</th>
         <th>{% trans "Name" %}</th>
         <th>{% trans "Status" %}</th>
+        <th>{% trans "Author" %}</th>
         <th>{% trans "Executor" %}</th>
+        <th>{% trans "Date created" %}</th>
         <th>{% trans "Actions" %}</th>
       </tr>
     </thead>
     <tbody>
       {% for task in tasks %}
         <tr>
+          <td>{{ task.id}}</td>
           <td>
             <a href="{% url 'task' task.id %}">{{ task.name }}</a>
           </td>
           <td>{{ task.status.name }}</td>
-          <td>{{ task.executor.username|default:"—" }}</td>
+          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ task.executor.username}}</td>
+          <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
           <td>
             <a href="{% url 'task_update' task.id %}" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
             <a href="{% url 'task_delete' task.id %}" class="btn btn-sm btn-outline-danger">{% trans "Delete" %}</a>
