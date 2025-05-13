@@ -137,7 +137,6 @@ msgstr "Исполнитель"
 #: task_manager/apps/tasks/models.py:30
 #: task_manager/templates/layouts/application.html:44
 #: task_manager/templates/tasks/task_form.html:42
-#: task_manager/templates/tasks/task_list.html:36
 msgid "Labels"
 msgstr "Метки"
 
@@ -259,6 +258,7 @@ msgstr "Изменить"
 msgid "Create"
 msgstr "Создать"
 
+#: task_manager/templates/tasks/task_list.html:36
 #: task_manager/templates/labels/label_list.html:6
 msgid "Label"
 msgstr "Метка"
