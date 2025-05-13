@@ -54,6 +54,11 @@ class TaskView(LoginRequiredMixin, DetailView):
     template_name = 'tasks/task_detail.html'
     context_object_name = 'task'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['labels'] = self.object.labels.all()
+        return context
+
 
 class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task

@@ -30,18 +30,14 @@
           <div class="col">{% trans 'Creation Date' %}</div>
           <div class="col">{{ task.created_at|date:"d.m.Y H:i" }}</div>
         </div>
-        {% if task.tags.exists %}
         <div class="row p-1">
-          <div class="col">
-            <h6>{% trans 'Layots:' %}</h6>
-            <ul>
-              {% for tag in task.tags.all %}
-                <li>{{ tag.name }}</li>
+          <h6>{% trans 'Labels:' %} {{ label.name }}</h6>
+            <ul class="ms-4">
+              {% for label in labels %}
+                <li>{{ label.name }}</li>
               {% endfor %}
             </ul>
-          </div>
         </div>
-        {% endif %}
         <div class="row p-1">
           <div class="col">
             <a href="{% url 'task_update' task.id %}">{% trans "Edit" %}</a><br>

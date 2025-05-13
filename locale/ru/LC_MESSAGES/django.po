@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 10:16+0300\n"
+"POT-Creation-Date: 2025-05-13 11:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,23 +141,23 @@ msgstr "Исполнитель"
 msgid "Labels"
 msgstr "Метки"
 
-#: task_manager/apps/tasks/views.py:66
+#: task_manager/apps/tasks/views.py:71
 msgid "Task is successfully created"
 msgstr "Задача успешно создана"
 
-#: task_manager/apps/tasks/views.py:77
+#: task_manager/apps/tasks/views.py:82
 msgid "Task is successfully changed"
 msgstr "Задача успешно изменена"
 
-#: task_manager/apps/tasks/views.py:85
+#: task_manager/apps/tasks/views.py:90
 msgid "Remove a task"
 msgstr "Удалить задачу"
 
-#: task_manager/apps/tasks/views.py:93
+#: task_manager/apps/tasks/views.py:98
 msgid "The task can be deleted only by its author"
 msgstr "Удалить задачу может только её автор"
 
-#: task_manager/apps/tasks/views.py:98
+#: task_manager/apps/tasks/views.py:103
 msgid "Task is successfully deleted"
 msgstr "Задача успешно удалёна"
 
@@ -247,7 +247,7 @@ msgstr "Создать метку"
 #: task_manager/templates/labels/label_list.html:28
 #: task_manager/templates/statuses/status_form.html:17
 #: task_manager/templates/statuses/statuses_list.html:28
-#: task_manager/templates/tasks/task_detail.html:47
+#: task_manager/templates/tasks/task_detail.html:43
 #: task_manager/templates/tasks/task_list.html:81
 #: task_manager/templates/users/user_list.html:21
 msgid "Edit"
@@ -271,7 +271,7 @@ msgstr "ID"
 
 #: task_manager/templates/labels/label_list.html:29
 #: task_manager/templates/statuses/statuses_list.html:29
-#: task_manager/templates/tasks/task_detail.html:48
+#: task_manager/templates/tasks/task_detail.html:44
 #: task_manager/templates/tasks/task_list.html:82
 #: task_manager/templates/users/user_list.html:22
 msgid "Delete"
@@ -343,8 +343,8 @@ msgstr "Нет статусов"
 msgid "View task"
 msgstr "Просмотр задачи"
 
-#: task_manager/templates/tasks/task_detail.html:36
-msgid "Layots:"
+#: task_manager/templates/tasks/task_detail.html:34
+msgid "Labels:"
 msgstr "Метки:"
 
 #: task_manager/templates/tasks/task_form.html:7
@@ -429,6 +429,9 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:28
 msgid "You are logged out"
 msgstr "Вы разлогинены"
+
+#~ msgid "Layots:"
+#~ msgstr "Метки:"
 
 #, fuzzy
 #~| msgid "Create"
