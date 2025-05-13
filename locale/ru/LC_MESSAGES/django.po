@@ -159,7 +159,7 @@ msgstr "Удалить задачу может только её автор"
 
 #: task_manager/apps/tasks/views.py:108
 msgid "Task is successfully deleted"
-msgstr "Задача успешно удалёна"
+msgstr "Задача успешно удалена"
 
 #: task_manager/apps/user/views.py:28 task_manager/apps/user/views.py:36
 msgid "You do not have permission to modify another user"
