@@ -8,5 +8,8 @@ class User(AbstractUser):
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
 
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}".strip()
+    
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
