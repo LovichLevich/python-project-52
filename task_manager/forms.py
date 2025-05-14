@@ -31,12 +31,12 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserEditForm(forms.ModelForm):
-    password1_field = forms.CharField(
+    password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput,
         required=True
     )
-    password2_field = forms.CharField(
+    password2 = forms.CharField(
         label='Password confirmation',
         widget=forms.PasswordInput,
         required=True
