@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/LovichLevich/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/LovichLevich/python-project-52/actions)
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=LovichLevich_python-project-52&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LovichLevich_python-project-52)
 
 
 
